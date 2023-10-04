@@ -18,12 +18,12 @@
 
 <div class="container mt-5 bg-cream">
   <h1 class="mb-4">Pulse Survey</h1>
-  <form id="pulse-survey-form">
+  <form id="pulse-survey-form" action="/submit-plussurvey-form" method="POST">
     <div class="form-group">
       <label for="question1"
         >Question 1: How satisfied are you with your work?</label
       >
-      <select class="form-control" id="question1" name="question1">
+      <select class="form-control" id="plusSurvey" name="plusSurvey">
         <option value="VerySatisfied">Very Satisfied</option>
         <option value="Satisfied">Satisfied</option>
         <option value="Neutral">Neutral</option>
@@ -33,7 +33,7 @@
     </div>
     <div class="form-group">
       <label for="question2">Question 2: Do you feel heard by your team?</label>
-      <select class="form-control" id="question2" name="question2">
+      <select class="form-control" id="plusSurvey2" name="plusSurvey2">
         <option value="Yes">Yes</option>
         <option value="No">No</option>
       </select>
@@ -42,36 +42,13 @@
       <label for="question3">Question 3: Additional comments (optional)</label>
       <textarea
         class="form-control"
-        id="question3"
-        name="question3"
+        id="plusSurvey3"
+        name="plusSurvey3"
         rows="4"
       ></textarea>
     </div>
+    <div class="d-flex justify-content-center p-4">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
   </form>
-  <div class="d-flex justify-content-center p-4">
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
 </div>
-
-<script>
-  // JavaScript to handle form submission
-  $(document).ready(function () {
-    $("#pulse-survey-form").submit(function (event) {
-      event.preventDefault();
-
-      // Retrieve user responses
-      var response1 = $("#question1").val();
-      var response2 = $("#question2").val();
-      var response3 = $("#question3").val();
-
-      // You can now send the responses to your server or process them as needed.
-      // For this example, we'll just display them in the console.
-      console.log("Question 1 Response: " + response1);
-      console.log("Question 2 Response: " + response2);
-      console.log("Question 3 Response: " + response3);
-
-      // Optionally, you can send the responses to a server using AJAX.
-      // Example: $.post("your-server-url", { response1, response2, response3 }, function(data) { });
-    });
-  });
-</script>
