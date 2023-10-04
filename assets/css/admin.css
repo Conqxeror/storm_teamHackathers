@@ -12,7 +12,10 @@
   .header .border-right {
     border-right: solid gray 2px; }
   .header .heading {
-    background-color: #e7d0af;
+    /* background-color: #e7d0af; */
+    background: aliceblue;
+    font-weight: 900;
+    font-size: 20px;
     height: 100%;
     width: 33.33%;
     display: flex;
@@ -21,7 +24,9 @@
     cursor: pointer;
     font-weight: bold; }
   .header .active {
-    background-color: #bd935c; }
+    background: aliceblue;
+    font-weight: 900;
+    font-size: 20px;}
 
 .below-header {
   width: 100%;
