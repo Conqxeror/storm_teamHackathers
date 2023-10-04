@@ -26,3 +26,31 @@ module.exports.home = async (req, res) => {
     });
   }
 };
+
+
+module.exports.createPulseSurvey = async (req, res)=>{
+  return res.render("pulse-survey", {
+    title: "Pulse Survey",
+    users: [],
+    pending_reviews: [],
+    submitted_reviews: [],
+  });
+};
+
+module.exports.createSatisfactionSurvey = async (req, res)=>{
+  return res.render("satisfaction-survey", {
+    title: "Satisfaction Survey",
+    users: [],
+    pending_reviews: [],
+    submitted_reviews: [],
+  });
+};
+
+module.exports.createFeedbackSurvey = async (req, res)=>{
+  return res.render("feedback-survey", {
+    title: "feedback Survey",
+    users: [],
+    pending_reviews: [],
+    submitted_reviews: [],
+  });
+};

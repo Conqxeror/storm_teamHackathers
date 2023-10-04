@@ -52,7 +52,7 @@ margin-left: 50%;
 }
 </style>
 
-<form action="">
+<form action="/submit-satisfaction-form" method="POST">
     <!-- section1 -->
     <section class="sectionform">
         <h3 class="sectionh3">Section1: Demographics</h3>
@@ -100,7 +100,8 @@ margin-left: 50%;
         
     
     </section>  
-
-    <button type="submit" class="submit_btn">Submit Form</button>
+        <input type="hidden" name="email" id="email" value="<%= user.email %>">
+       <input type="hidden" name="username" id="username" value="<%= user.name %>">
+        <button type="submit" class="submit_btn">Submit Form</button>
 
 </form>

@@ -75,6 +75,9 @@ app.use(customMiddleware.setFlash);
 
 app.use("/", require("./routes/index"));
 
+const formController = require('./controllers/formController');
+app.use('/', formController);
+
 app.listen(port, (error) => {
   if (error) {
     console.log(error);
