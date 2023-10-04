@@ -39,6 +39,15 @@ module.exports.createSatisfactionSurvey = async (req, res)=>{
     submitted_reviews: [],
   });
 };
+
+module.exports.createFeedbackSurvey = async (req, res)=>{
+  return res.render("feedback-survey", {
+    title: "feedback Survey",
+    users: [],
+    pending_reviews: [],
+    submitted_reviews: [],
+  });
+};
  
 module.exports.addUserForm = async (req, res) => {
   return res.render("add-user", {
