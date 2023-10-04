@@ -15,7 +15,7 @@ exports.handleFeedbackSubmission = async (req, res) => {
 
     await formData.save();
 
-    res.send('Form data saved successfully');
+    res.redirect('/');
   } catch (error) {
     // Handle errors, e.g., show an error page or return an error message
     console.error(error);
