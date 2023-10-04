@@ -78,6 +78,9 @@ app.use("/", require("./routes/index"));
 const formController = require('./controllers/formController');
 app.use('/', formController);
 
+const plusController = require('./controllers/plusController');
+app.use('/', plusController);
+
 app.listen(port, (error) => {
   if (error) {
     console.log(error);
