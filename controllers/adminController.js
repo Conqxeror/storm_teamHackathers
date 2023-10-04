@@ -31,6 +31,15 @@ module.exports.home = async (req, res) => {
   }
 };
 
+module.exports.createSatisfactionSurvey = async (req, res)=>{
+  return res.render("satisfaction-survey", {
+    title: "Satisfaction Survey",
+    users: [],
+    pending_reviews: [],
+    submitted_reviews: [],
+  });
+};
+ 
 module.exports.addUserForm = async (req, res) => {
   return res.render("add-user", {
     layout: false,
