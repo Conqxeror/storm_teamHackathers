@@ -8,6 +8,7 @@ const passport = require("passport");
 router.get("/",(req,res)=>{return res.redirect("/user/admin/home")});
 
 router.get("/home", passport.checkAdminAuthentication, adminController.home);
+router.get("/pulse-survey", passport.checkAdminAuthentication, adminController.createPulseSurvey);
 router.get("/satisfaction-survey", passport.checkAdminAuthentication, adminController.createSatisfactionSurvey);
 router.get("/feedback-survey", passport.checkAdminAuthentication, adminController.createFeedbackSurvey);
 router.get("/add-user-form", passport.checkAdminAuthentication, adminController.addUserForm);
