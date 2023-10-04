@@ -70,3 +70,9 @@ module.exports.signOut = (req, res) => {
     return res.redirect("/user/sign-in");
   });
 };
+
+module.exports.profileRender = (req, res) =>{
+  res.render("profile", {
+    title: "Profile Page",
+  });
+}
