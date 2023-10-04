@@ -102,11 +102,11 @@
         <div class="form-section">
 
 
-            <form>
+            <form method="POST" action="/submit-feedback">
 
                 <div class="rating">
                     <label for="rating">User:</label> <br>
-                    <select id="rating" name="rating">
+                    <select id="user" name="user">
                         <option value="" disabled selected>Select User</option>
                         <option value="5">5 - Excellent </option>
                         <option value="4">4 - Very Good</option>
@@ -128,16 +128,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Suggestion</label><br>
-                    <textarea name="exampleInputPassword1" id="exampleInputPassword1" cols="40"
+                    <label for="suggestion" class="form-label">Suggestion</label><br>
+                    <textarea name="suggestion" id="suggestion" cols="40"
                         rows="2"> Write Your Suggestion</textarea>
                 </div>
 
-
-
-
-
-
+                <input value="<%= user.email %>" id="email" type="hidden" name="email"/>
                 <button type="submit" class="btn btn-primary">Submit</button>
 
             </form>
