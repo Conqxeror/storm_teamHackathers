@@ -52,12 +52,13 @@
         <% } %>
       </div>
       <div>
-        <style></style>
+        <%if(title!='Sign In' && title!='Sign Up'){%>
         <a href="/user/Analysis"
           ><button type="button" class="btn btn-primary" id="btn1">
             Performance
           </button></a
         >
+        <%}%>
       </div>
 
       <form class="d-flex">
