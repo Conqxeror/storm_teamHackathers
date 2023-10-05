@@ -25,9 +25,9 @@
             Select Forms
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<%= user.role.enum === 'Admin' ? '/user/admin/satisfaction-survey' : '/user/employee/satisfaction-survey' %>">Satisfaction survey</a></li>
-            <li><a class="dropdown-item" href="<%= user.role.enum === 'Admin' ? '/user/admin/pulse-survey' : '/user/employee/pulse-survey' %>">pulse survey </a></li>
-            <li><a class="dropdown-item" href="<%= user.role.enum === 'Admin' ? '/user/admin/feedback-survey' : '/user/employee/feedback-survey' %>">Feedback form </a></li>
+            <li><a class="dropdown-item" href="<%= user.role.enum === 'Admin' ? 'user/admin/satisfaction-survey' : '/user/employee/satisfaction-survey' %>">Satisfaction survey</a></li>
+            <li><a class="dropdown-item" href="<%= user.role.enum === 'Admin' ? 'user/admin/pulse-survey' : '/user/employee/pulse-survey' %>">pulse survey </a></li>
+            <li><a class="dropdown-item" href="<%= user.role.enum === 'Admin' ? 'user/admin/feedback-survey' : '/user/employee/feedback-survey' %>">Feedback form </a></li>
           </ul>
         </div><% } %>
       </div>

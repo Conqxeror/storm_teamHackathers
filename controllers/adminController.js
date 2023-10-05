@@ -50,9 +50,10 @@ module.exports.createSatisfactionSurvey = async (req, res)=>{
 };
 
 module.exports.createFeedbackSurvey = async (req, res)=>{
+  let users = await User.find();
   return res.render("feedback-survey", {
-    title: "feedback Survey",
-    users: [],
+    title: "Feedback Survey",
+    users: users,
     pending_reviews: [],
     submitted_reviews: [],
   });
