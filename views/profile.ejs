@@ -121,9 +121,9 @@ margin-bottom:50px;
     <div class="main_headerprofile">
         <div class="left_info">
 
-            <h3 class="li-h3">User Name:<span class="username">User name</span></h3>
+            <h3 class="li-h3">User Name:<span class="username"><%= user.name %></span></h3>
             
-            <h3 class="li-h3">Email-Id:<span class="useremail">Email-id</span></h3>
+            <h3 class="li-h3">Email-Id:<span class="useremail"><%= user.email %></span></h3>
             <!-- <a href="" class="sign-out">Sign-Out</a> -->
             <button type="button" class="btn btn-danger">Sign-Out</button>
 
@@ -139,123 +139,49 @@ margin-bottom:50px;
 </header>
 
 <main>
-    <!-- section1  -->
+    <!-- section1 - MY REVIEW SUBMITTED -->
     <section>
-        <h2 class="myh3">MY REVIEW SUBMITTED</h2>
-
-        <div class="Allcards">
-            <div class="card" >
-                <img src="../public/img/pro1.png" class="card-img-top" id="card-img1" alt="Profile_images">
-                <div class="card-body">
-                  <h5 class="card-title">UserName</h5>
-                  <p class="card-text">
-                    <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                    <i class="fa-solid fa-star-half-stroke" style="color: #ffdf00;"></i>
-                    <i class="fa-regular fa-star" style="color: #ffdf00;"></i>
-                </p>
-                <div class="suggestion">
-                    <p class="sugestion-p">Your organization and planning skills have helped our team meet and exceed our goals</p>
-                </div>
-                </div>
+      <h2 class="myh3">MY REVIEW SUBMITTED</h2>
+      <div class="Allcards">
+        <% SubmittedData.forEach(function(feedback, index) { %>
+          <div class="card">
+            <!-- Display feedback for submitted reviews -->
+            <div class="card-body">
+              <h6 class=""><b><%= feedback.user %></b></h6>
+              <p class="card-text">
+                <% for (let i = 0; i < feedback.rating; i++) { %>
+                  <i class="fa-solid fa-star" style="color: #000000;"></i>
+                <% } %>
+              </p>
+              <div class="suggestion">
+                <p class="sugestion-p"><%= feedback.suggestion %></p>
               </div>
-              <div class="card">
-                <img src="pro1.png" class="card-img-top" id="card-img2" alt="Profile_images">
-                <div class="card-body">
-                  <h5 class="card-title">UserName</h5>
-                  <p class="card-text">
-                    <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                    <i class="fa-regular fa-star" style="color: #ffdf00;"></i>
-                    <i class="fa-regular fa-star" style="color: #ffdf00;"></i>
-                </p>
-                <div class="suggestion">
-                    <p class="sugestion-p">Is a reliable team member, consistently meeting commitments and delivering quality work</p>
-                </div>
-                </div>
-              </div>
-              <div class="card">
-                <img src="pro3.png" class="card-img-top" id="card-img3" alt="Profile_images">
-                <div class="card-body">
-                  <h5 class="card-title">UserName</h5>
-                  <p class="card-text">
-                    <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                    <i class="fa-solid fa-star-half-stroke" style="color: #ffdf00;"></i>
-                </p>
-                <div class="suggestion">
-                    <p class="sugestion-p">A formal assessment in which a manager evaluates an employee's work performance</p>
-                </div>
-                </div>
-              </div>
-            
-        </div>
-
-    </section>
-
-
-    <section>
-        <h2 class="myh3">MY RECIVED REVIEW </h2>
-
-            <div class="Allcards">
-                <div class="card" >
-                    <img src="pro2.png" class="card-img-top" id="card-img1" alt="Profile_images">
-                    <div class="card-body">
-                      <h5 class="card-title">UserName</h5>
-                      <p class="card-text">
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-solid fa-star-half-stroke" style="color: #ffdf00;"></i>
-                        
-                    </p>
-                    <div class="suggestion">
-                        <p class="sugestion-p">I am pleased with your determination to finish this project. Your helpful attitude shows you are ready to take on new challenges.</p>
-                    </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img src="pro1.png" class="card-img-top" id="card-img2" alt="Profile_images">
-                    <div class="card-body">
-                      <h5 class="card-title">UserName</h5>
-                      <p class="card-text">
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-
-                    </p>
-                    <div class="suggestion">
-                        <p class="sugestion-p">Ava, your work looks great! It is clear that you care about your work, and I appreciate that you asked the client about their design preferences before creating their website.</p>
-                    </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img src="pro3.png" class="card-img-top" id="card-img3" alt="Profile_images">
-                    <div class="card-body">
-                      <h5 class="card-title">UserName</h5>
-                      <p class="card-text">
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                        <i class="fa-regular fa-star" style="color: #ffdf00;"></i>
-
-                    </p>
-                    <div class="suggestion">
-                        <p class="sugestion-p">You did a wonderful job managing conflict during today's meeting. Thank you for your quick and kind response.</p>
-                    </div>
-                    </div>
-                  </div>
-                  
-              
             </div>
-
-    </section> 
-</main>
+          </div>
+        <% }); %>
+      </div>
+    </section>
+  
+    <!-- section2 - MY RECEIVED REVIEW -->
+    <section>
+      <h2 class="myh3">MY RECEIVED REVIEW</h2>
+      <div class="Allcards">
+        <% ReceivedData.forEach(function(feedback, index) { %>
+          <div class="card">
+            <!-- Display feedback for received reviews -->
+            <div class="card-body">
+              <h6 class=""><b><%= feedback.email %></b></h6>
+              <p class="card-text">
+                <% for (let i = 0; i < feedback.rating; i++) { %>
+                  <i class="fa-solid fa-star" style="color: #000000;"></i>
+                <% } %>
+              </p>
+              <div class="suggestion">
+                <p class="sugestion-p"><%= feedback.suggestion %></p>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </section>
+  </main>
