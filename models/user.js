@@ -27,6 +27,10 @@ const userSchema = new mongoose.Schema(
         ref: "User",
       },
     ],
+    image:{
+      type: String,
+      required: true
+    }
   },
   {
     timestamps: true,

@@ -117,6 +117,8 @@ margin-bottom:50px;
 }
 </style>
 
+<script src="https://kit.fontawesome.com/d77c16afe8.js" crossorigin="anonymous"></script>
+
 <header>
     <div class="main_headerprofile">
         <div class="left_info">
@@ -130,9 +132,7 @@ margin-bottom:50px;
         </div>
 
         <div class="right_info">
-
-            <img src="../public/img/logofinal.png" alt="Profile_image" class="profile-logo">
-
+            <img src="<%= user.image %>" alt="Profile_image" class="profile-logo">
         </div>
     </div>
 
@@ -142,19 +142,22 @@ margin-bottom:50px;
     <!-- section1 - MY REVIEW SUBMITTED -->
     <section>
       <h2 class="myh3">MY REVIEW SUBMITTED</h2>
-      <div class="Allcards">
+      <div class="row">
         <% SubmittedData.forEach(function(feedback, index) { %>
-          <div class="card">
-            <!-- Display feedback for submitted reviews -->
-            <div class="card-body">
-              <h6 class=""><b><%= feedback.user %></b></h6>
-              <p class="card-text">
-                <% for (let i = 0; i < feedback.rating; i++) { %>
-                  <i class="fa-solid fa-star" style="color: #000000;"></i>
-                <% } %>
-              </p>
-              <div class="suggestion">
-                <p class="sugestion-p"><%= feedback.suggestion %></p>
+          <div class="col-md-3 mb-4">
+            <div class="card">
+              <!-- Display feedback for submitted reviews -->
+              <img class="card-img-top" src="https://source.unsplash.com/random/400×400/?portrait<%= feedback %>" alt="Card image cap" style="height: 170px; width: 170px; border-radius: 6rem;">
+              <div class="card-body">
+                <h6 class=""><b><%= feedback.user %></b></h6>
+                <p class="card-text">
+                  <% for (let i = 0; i < feedback.rating; i++) { %>
+                    <i class="fa-solid fa-star" style="color: #000000;"></i>
+                  <% } %>
+                </p>
+                <div class="suggestion">
+                  <p class="card-text"><%= feedback.suggestion %></p>
+                </div>
               </div>
             </div>
           </div>
@@ -165,19 +168,22 @@ margin-bottom:50px;
     <!-- section2 - MY RECEIVED REVIEW -->
     <section>
       <h2 class="myh3">MY RECEIVED REVIEW</h2>
-      <div class="Allcards">
+      <div class="row">
         <% ReceivedData.forEach(function(feedback, index) { %>
-          <div class="card">
-            <!-- Display feedback for received reviews -->
-            <div class="card-body">
-              <h6 class=""><b><%= feedback.email %></b></h6>
-              <p class="card-text">
-                <% for (let i = 0; i < feedback.rating; i++) { %>
-                  <i class="fa-solid fa-star" style="color: #000000;"></i>
-                <% } %>
-              </p>
-              <div class="suggestion">
-                <p class="sugestion-p"><%= feedback.suggestion %></p>
+          <div class="col-md-3 mb-4">
+            <div class="card">
+              <!-- Display feedback for received reviews -->
+              <img class="card-img-top" src="https://source.unsplash.com/random/400×400/?profilemaleface<%= feedback %>" alt="Card image cap" style="height: 170px; width: 170px; border-radius: 6rem;">
+              <div class="card-body">
+                <h6 class=""><b><%= feedback.email %></b></h6>
+                <p class="card-text">
+                  <% for (let i = 0; i < feedback.rating; i++) { %>
+                    <i class="fa-solid fa-star" style="color: #000000;"></i>
+                  <% } %>
+                </p>
+                <div class="suggestion">
+                  <p class="card-text"><%= feedback.suggestion %></p>
+                </div>
               </div>
             </div>
           </div>
@@ -185,3 +191,4 @@ margin-bottom:50px;
       </div>
     </section>
   </main>
+  
