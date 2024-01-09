@@ -19,6 +19,9 @@ router.post("/sign-up", userController.createUser);
 
 router.get("/sign-out", userController.signOut);
 
+router.get("/profile", userController.profileRender);
+router.get("/analysis", userController.renderAnalysis);
+
 router.use("/admin",require("./admin"));
 router.use("/employee",require("./employee"))
 

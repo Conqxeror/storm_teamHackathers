@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Feedback = require("../models/feedback");
 const fs = require("fs");
 const path = require("path");
 
@@ -69,4 +70,25 @@ module.exports.signOut = (req, res) => {
     req.flash("success", "You have Logged Out");
     return res.redirect("/user/sign-in");
   });
+};
+
+exports.profileRender = async (req, res) => {
+  try {
+    const users = await User.find();
+    const SubmittedData = await Feedback.find({ email: req.user.email });
+    const ReceivedData = await Feedback.find({ user: req.user.email });
+    res.render("profile", {
+      users,
+      title: "Feedback Survey",
+      SubmittedData,
+      ReceivedData,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+
+module.exports.renderAnalysis = async (req, res) => {
+  return res.render("Analysis", { title: "Analysis" });
 };

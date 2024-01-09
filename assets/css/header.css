@@ -1,5 +1,6 @@
 header nav {
-  background-color: #6e3ea3;
+  /* background-color: #6e3ea3; */
+  background: linear-gradient(to right, #434343, #000000);
   height: 80px; }
   header nav .navbar-brand {
     height: 50px;
@@ -49,3 +50,7 @@ header nav {
       height: 50px;
       width: 50px;
       border-radius: 50%; }
+
+      .btn {
+        margin-left: 20px;
+      }

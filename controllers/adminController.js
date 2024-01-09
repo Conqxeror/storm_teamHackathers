@@ -31,6 +31,34 @@ module.exports.home = async (req, res) => {
   }
 };
 
+module.exports.createPulseSurvey = async (req, res)=>{
+  return res.render("pulse-survey", {
+    title: "Pulse Survey",
+    users: [],
+    pending_reviews: [],
+    submitted_reviews: [],
+  });
+};
+
+module.exports.createSatisfactionSurvey = async (req, res)=>{
+  return res.render("satisfaction-survey", {
+    title: "Satisfaction Survey",
+    users: [],
+    pending_reviews: [],
+    submitted_reviews: [],
+  });
+};
+
+module.exports.createFeedbackSurvey = async (req, res)=>{
+  let users = await User.find();
+  return res.render("feedback-survey", {
+    title: "Feedback Survey",
+    users: users,
+    pending_reviews: [],
+    submitted_reviews: [],
+  });
+};
+ 
 module.exports.addUserForm = async (req, res) => {
   return res.render("add-user", {
     layout: false,

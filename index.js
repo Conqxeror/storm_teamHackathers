@@ -75,6 +75,15 @@ app.use(customMiddleware.setFlash);
 
 app.use("/", require("./routes/index"));
 
+const formController = require('./controllers/formController');
+app.use('/', formController);
+
+const plusController = require('./controllers/plusController');
+app.use('/', plusController);
+
+const feedbackController = require('./controllers/feedbackController');
+app.post('/submit-feedback', feedbackController.handleFeedbackSubmission);
+
 app.listen(port, (error) => {
   if (error) {
     console.log(error);
